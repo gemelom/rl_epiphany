@@ -1,2 +1,1 @@
-# my notebook  
-[note.hobbitqia.cc](http://note.hobbitqia.cc/)
+https://gemelom.github.io/rl_epiphany/
