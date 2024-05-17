@@ -1,0 +1,109 @@
+site_name: RL Epiphany
+repo_name: gemelom/rl_epiphany  #存储库名称，一般自动设置
+repo_url: https://github.com/gemelom/rl_epiphany/  #存储库URL
+# edit_uri: tree/master/docs  #每个文档的顶部显示一个编辑按钮，""则隐藏
+site_description: RL epiphany
+
+theme: 
+  name: material
+  language: zh
+  logo: favicon.ico
+  favicon: favicon.ico
+  custom_dir: overrides
+  features:
+    - content.code.annotate
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.top
+  font:
+    text: LXGW WenKai Screen
+    code: JetBrains Mono
+  palette:     #切换昼夜模式的颜色，审美差就用默认，专业点就自定义
+    - media: "(prefers-color-scheme: light)" 
+      scheme: default  #配色方案：浅色模式
+      primary: brown  #原色，默认蓝，用于标题、侧边栏、文本链接和其他几个组件
+      accent: brown  #强调色，默认蓝，可以交互的元素如悬停链接、按钮和滚动条
+      toggle:
+        icon: material/weather-sunny #图标，太阳
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"  
+      scheme: slate  #配色方案：深色模式
+      # primary: Brown  #原色，默认蓝，用于标题、侧边栏、文本链接和其他几个组件
+      toggle:
+        icon: material/weather-night  #图标，月亮
+        name: Switch to light mode
+
+
+markdown_extensions:
+  - toc:
+      permalink: true
+      toc_depth: 4
+  - meta
+  - def_list
+  - attr_list
+  - md_in_html
+  - sane_lists
+  - admonition
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.snippets
+  - pymdownx.magiclink
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.smartsymbols  #智能符号
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true 
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.arithmatex:
+      generic: true
+
+
+extra_css:
+  - https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css
+  - https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
+  - https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
+  - css/custom.css
+  - css/card.css
+  - css/tasklist.css
+  - css/flink.css
+  - css/more_changelog.css
+  
+
+extra_javascript:
+  - js/baidu-tongji.js
+  - https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js
+  - js/katex.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+
+plugins:
+  - changelog
+  - search
+  - git-revision-date-localized:
+      type: datetime
+      timezone: Asia/Shanghai
+      locale: zh
+      enable_creation_date: true
+      exclude:
+        - index.md
+
+nav:
+  - Home:
+    - index.md
+  - RL:
+    - RL/PG.md
