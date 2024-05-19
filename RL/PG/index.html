@@ -20,7 +20,7 @@
     
     
       
-        <title>Policy Gradient - RL Epiphany</title>
+        <title>PG - RL Epiphany</title>
       
     
     
@@ -123,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Policy Gradient
+              PG
             
           </span>
         </div>
@@ -427,14 +427,12 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
   <span class="md-ellipsis">
-    Policy Gradient
+    PG
   </span>
   
 
@@ -445,7 +443,7 @@
         
   
   <span class="md-ellipsis">
-    Policy Gradient
+    PG
   </span>
   
 
@@ -457,8 +455,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -467,6 +463,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#policy-gradient" class="md-nav__link">
+    <span class="md-ellipsis">
+      Policy Gradient
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Policy Gradient">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#policy" class="md-nav__link">
     <span class="md-ellipsis">
       Policy
@@ -474,13 +480,36 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#trajectory" class="md-nav__link">
     <span class="md-ellipsis">
       Trajectory
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#policy-gradient_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Policy gradient
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -517,8 +546,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -527,6 +554,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#policy-gradient" class="md-nav__link">
+    <span class="md-ellipsis">
+      Policy Gradient
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Policy Gradient">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#policy" class="md-nav__link">
     <span class="md-ellipsis">
       Policy
@@ -534,13 +571,36 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#trajectory" class="md-nav__link">
     <span class="md-ellipsis">
       Trajectory
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#policy-gradient_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Policy gradient
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -563,20 +623,83 @@
   
 
 
-<h1 id="policy-gradient">Policy Gradient<a class="headerlink" href="#policy-gradient" title="Permanent link">&para;</a></h1>
-<h2 id="policy">Policy<a class="headerlink" href="#policy" title="Permanent link">&para;</a></h2>
+  <h1>PG</h1>
+
+<h2 id="policy-gradient">Policy Gradient<a class="headerlink" href="#policy-gradient" title="Permanent link">&para;</a></h2>
+<h3 id="policy">Policy<a class="headerlink" href="#policy" title="Permanent link">&para;</a></h3>
 <p>Policy 𝜋 is a network with parameter 𝜃 </p>
 <ul>
-<li>Input: the observation of machine represented as a vector or a matrix </li>
+<li>Input: the observation of machine represented as a vector or a matrix</li>
 <li>Output: each action corresponds to a neuron in output layer</li>
 </ul>
-<h2 id="trajectory">Trajectory<a class="headerlink" href="#trajectory" title="Permanent link">&para;</a></h2>
+<h3 id="trajectory">Trajectory<a class="headerlink" href="#trajectory" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20240517234015797" src="../assets/image-20240517234015797.png" /></p>
 <ul>
 <li>
-<p>Trajectory $$\tau = {{s_1, a_1, s_2, a_2, \cdots, s_T, a_T}} $$</p>
+<p>Trajectory <script type="math/tex; mode=display">\tau = \{{s_1, a_1, s_2, a_2, \cdots, s_T, a_T}\} </script>​</p>
 </li>
 <li>
-<div class="arithmatex">\[ p_{\theta}(\tau)= p(s_1)p_{\theta}(a_1|s_1)p(s_2|s_1, a_1)p_{\theta}(a_2|s_2)p(s_3|s_2, a_2)\cdots = p(s_1)\prod_{t=1}^{T} p_{\theta}(a_t|s_t)p(s_{t+1}|s_t, a_t) \]</div>
+<p>Probability of <script type="math/tex">\tau</script>
+<script type="math/tex; mode=display">
+  \begin{equation}
+  \begin{split}   
+    p_{\theta}(\tau)&= p(s_1)p_{\theta}(a_1|s_1)p(s_2|s_1, a_1)p_{\theta}(a_2|s_2)p(s_3|s_2, a_2)\cdots \\
+    &=p(s_1)\prod_{t=1}^{T} p_{\theta}(a_t|s_t)p(s_{t+1}|s_t, a_t)
+  \end{split}
+  \end{equation}
+  </script>
+</p>
+</li>
+<li>
+<p>Expected reward 
+  <script type="math/tex; mode=display">
+  \bar{R}_{\theta} = \sum_{\tau} R(\tau)p_{\theta}(\tau)
+  </script>
+</p>
+</li>
+</ul>
+<details class="note">
+<summary>Note</summary>
+<p>Target : find an actor to maximize the expectation of accumulating reward <script type="math/tex">\bar{R}_{\theta}</script>
+</p>
+</details>
+<h3 id="policy-gradient_1">Policy gradient<a class="headerlink" href="#policy-gradient_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Calculate grad
+  <script type="math/tex; mode=display">
+  \begin{equation}
+  \begin{split}
+    {\nabla}{\bar{R}_{\theta}}&= \nabla \sum_{\tau} R(\tau)p_{\theta}(\tau) \\
+    &= \sum_{\tau} R(\tau){\nabla}p_{\theta}(\tau) \\
+    &= \sum_{\tau} R(\tau)p_{\theta}(\tau){\nabla}\log p_{\theta}(\tau) \\
+    &= E_{\tau\thicksim p_{\theta}(\tau)} [R(\tau)\nabla\log p_{\theta}(\tau)] \approx \frac{1}{N} \sum_{n=1}^{N} R({\tau}^n)\nabla\log p_{\theta}({\tau}^n) \\
+    &= \frac{1}{N} \sum_{n=1}^{N} \sum_{t=1}^{T_n} R({\tau}^n)\nabla \log p_{\theta}(a_t^n \mid s_t^n)
+  \end{split}
+  \end{equation}
+  </script>
+</p>
+</li>
+<li>
+<p>Update model
+  <script type="math/tex; mode=display">
+  \theta \leftarrow \eta\nabla\bar{R}_{\theta}
+  </script>
+</p>
+</li>
+</ul>
+<h3 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Tip1: Add a baseline
+  <script type="math/tex; mode=display">
+    {\nabla}{\bar{R}_{\theta}}\approx \frac{1}{N} \sum_{n=1}^{N} \sum_{t=1}^{T_n} (R({\tau}^n)-b)\nabla \log p_{\theta}(a_t^n \mid s_t^n) \\
+    b \approx E[R(\tau)]
+  </script>
+</li>
+<li>Tip2: Assign suitable credit
+  <script type="math/tex; mode=display">
+    {\nabla}{\bar{R}_{\theta}}\approx \frac{1}{N} \sum_{n=1}^{N} \sum_{t=1}^{T_n} (\sum_{t'=t}^{T_n} {r_{t'}^n}-b)\nabla \log p_{\theta}(a_t^n \mid s_t^n) \\
+  </script>
 </li>
 </ul>
 
@@ -739,9 +862,7 @@
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
-      
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML"></script>
       
     
   </body>
