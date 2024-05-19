@@ -49,7 +49,7 @@ Policy 𝜋 is a network with parameter 𝜃
 
 - Update model
   $$
-  \theta \leftarrow \eta\nabla\bar{R}_{\theta}
+  \theta \leftarrow \theta+\eta\nabla\bar{R}_{\theta}
   $$
 
 ### Implementation
