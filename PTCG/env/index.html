@@ -11,10 +11,8 @@
       
       
       
-        <link rel="prev" href="../Q-Learning/">
+        <link rel="prev" href="../../RL/DQN/">
       
-      
-        <link rel="next" href="../../PTCG/env/">
       
       
       <link rel="icon" href="../../favicon.ico">
@@ -22,7 +20,7 @@
     
     
       
-        <title>DQN - RL Epiphany</title>
+        <title>Environment - RL Epiphany</title>
       
     
     
@@ -92,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dqn" class="md-skip">
+        <a href="#environment" class="md-skip">
           跳转至
         </a>
       
@@ -125,7 +123,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              DQN
+              Environment
             
           </span>
         </div>
@@ -250,13 +248,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../PG/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../RL/PG/" class="md-tabs__link">
           
   
     
@@ -272,11 +268,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../PTCG/env/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
     
@@ -393,10 +391,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -411,20 +407,17 @@
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -435,7 +428,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             RL
@@ -449,7 +442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../PG/" class="md-nav__link">
+      <a href="../../RL/PG/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -470,7 +463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../PPO/" class="md-nav__link">
+      <a href="../../RL/PPO/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -491,7 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Q-Learning/" class="md-nav__link">
+      <a href="../../RL/Q-Learning/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -504,6 +497,81 @@
   
 
               
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../RL/DQN/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DQN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    PTCG
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            PTCG
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -525,7 +593,7 @@
           
   
   <span class="md-ellipsis">
-    DQN
+    Environment
   </span>
   
 
@@ -536,7 +604,7 @@
         
   
   <span class="md-ellipsis">
-    DQN
+    Environment
   </span>
   
 
@@ -558,45 +626,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#replay-buffer" class="md-nav__link">
+  <a href="#observation-space" class="md-nav__link">
     <span class="md-ellipsis">
-      Replay Buffer
+      Observation space
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#target-network" class="md-nav__link">
+  <a href="#action-space" class="md-nav__link">
     <span class="md-ellipsis">
-      Target Network
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#double-dqn" class="md-nav__link">
-    <span class="md-ellipsis">
-      Double DQN
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dueling-dqn" class="md-nav__link">
-    <span class="md-ellipsis">
-      Dueling DQN
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prioritized-replay" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prioritized Replay
+      Action space
     </span>
   </a>
   
@@ -606,76 +647,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-      
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    PTCG
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            PTCG
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../PTCG/env/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Environment
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -715,45 +686,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#replay-buffer" class="md-nav__link">
+  <a href="#observation-space" class="md-nav__link">
     <span class="md-ellipsis">
-      Replay Buffer
+      Observation space
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#target-network" class="md-nav__link">
+  <a href="#action-space" class="md-nav__link">
     <span class="md-ellipsis">
-      Target Network
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#double-dqn" class="md-nav__link">
-    <span class="md-ellipsis">
-      Double DQN
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dueling-dqn" class="md-nav__link">
-    <span class="md-ellipsis">
-      Dueling DQN
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prioritized-replay" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prioritized Replay
+      Action space
     </span>
   </a>
   
@@ -778,65 +722,953 @@
   
 
 
-<h1 id="dqn">DQN<a class="headerlink" href="#dqn" title="Permanent link">&para;</a></h1>
-<h2 id="replay-buffer">Replay Buffer<a class="headerlink" href="#replay-buffer" title="Permanent link">&para;</a></h2>
-<p>Ensure i.i.d. training data</p>
+<h1 id="environment">Environment<a class="headerlink" href="#environment" title="Permanent link">&para;</a></h1>
+<h2 id="observation-space">Observation space<a class="headerlink" href="#observation-space" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Store <script type="math/tex">(s_t, a_t, r_t, s_{t+1})</script> into buffer every timestep</li>
-<li>Sample <script type="math/tex">(s_t, a_t, r_t, s_{t+1})</script> batch from buffer every train frequency step</li>
-</ul>
-<h2 id="target-network">Target Network<a class="headerlink" href="#target-network" title="Permanent link">&para;</a></h2>
-<p>Fixed network <script type="math/tex">\hat{Q}</script> to calculate TD target, every <script type="math/tex">N</script> steps <script type="math/tex">\hat{Q} \leftarrow Q</script>
-</p>
-<p>
-<script type="math/tex; mode=display">
-y=r_i+\max _a \hat{Q}\left(s_{i+1}, a\right)
-</script>
-</p>
-<h2 id="double-dqn">Double DQN<a class="headerlink" href="#double-dqn" title="Permanent link">&para;</a></h2>
-<p>With random noise <script type="math/tex">X_1, X_2 \sim N(0, \epsilon)</script>
-<script type="math/tex; mode=display">
-\begin{gathered}
-\mathbb{E}_X\left[\max \left(Q\left(s, a_1\right)+X_1, Q\left(s, a_2\right)+X_2\right)\right] \\
-\geq \max \left(\mathbb{E}_X\left[Q\left(s, a_1\right)+X_1\right], \mathbb{E}_X\left[Q\left(s, a_2\right)+X_2\right]\right)=\max \left(Q\left(s, a_1\right), Q\left(s, a_2\right)\right)
-\end{gathered}
-</script>
-</p>
-<ul>
-<li>
-<p>Q value is always over-estimated 
-<script type="math/tex; mode=display">
-Q\left(s_t, a_t\right) \longleftrightarrow r_t+\max _a Q\left(s_{t+1}, a\right)
-</script>
-</p>
-</li>
-<li>
-<p>Double DQN: two functions <script type="math/tex">Q</script> and <script type="math/tex">Q^{\prime}</script>
-<script type="math/tex; mode=display">
-Q\left(s_t, a_t\right) \longleftrightarrow r_t+Q^{\prime}\left(s_{t+1}, \arg \max _a Q\left(s_{t+1}, a\right)\right)
-</script>
-</p>
-<ul>
-<li>if <script type="math/tex">Q</script> over-estimate a, <script type="math/tex">Q^{\prime}</script> would possibly give it proper value</li>
-<li>if <script type="math/tex">Q^{\prime}</script> over-estimate a, <script type="math/tex">Q</script> would possibly not select it</li>
+<li>dim=(283,), dtype=uint8</li>
+<li>four main components:<ul>
+<li>agent state feature (0~130)</li>
+<li>opponent state feature (131~259)</li>
+<li>agent private feature (260~279)</li>
+<li>common feature (280~282)</li>
 </ul>
 </li>
 </ul>
-<h2 id="dueling-dqn">Dueling DQN<a class="headerlink" href="#dueling-dqn" title="Permanent link">&para;</a></h2>
-<p>Split the original <script type="math/tex">Q</script> network into two parts: <script type="math/tex">V</script> network and <script type="math/tex">A</script> network</p>
-<p>
-<script type="math/tex; mode=display">
-Q(s, a)=V(s)+A(s, a) 
-</script>
-</p>
-<ul>
-<li>
-<script type="math/tex">V</script>: represent state value</li>
-<li>
-<script type="math/tex">A</script>: measure the rationality of selecting a specific action in a certain state</li>
-</ul>
-<h2 id="prioritized-replay">Prioritized Replay<a class="headerlink" href="#prioritized-replay" title="Permanent link">&para;</a></h2>
-<p>The data with larger TD error in previous training has higher probability to be sampled</p>
+<table>
+<thead>
+<tr>
+<th>begin</th>
+<th>size</th>
+<th>name</th>
+<th>high_level</th>
+<th>desc</th>
+<th>range</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>active_pokemon_num</td>
+<td>agent state feature</td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>bench_pokemon_num</td>
+<td></td>
+<td></td>
+<td>[0, 6]</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>left_prize_num</td>
+<td></td>
+<td></td>
+<td>[0, 6]</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1</td>
+<td>hand_num</td>
+<td></td>
+<td></td>
+<td>[0, 60]</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1</td>
+<td>deck_num</td>
+<td></td>
+<td></td>
+<td>[0, 60]</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1</td>
+<td>discard_num</td>
+<td></td>
+<td></td>
+<td>[0, 60]</td>
+</tr>
+<tr>
+<td>6</td>
+<td>1</td>
+<td>lost_zone_num</td>
+<td></td>
+<td></td>
+<td>[0, 60]</td>
+</tr>
+<tr>
+<td>7</td>
+<td>1</td>
+<td>vstar_used</td>
+<td></td>
+<td>0 - used 1 - not used</td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>8</td>
+<td>1</td>
+<td>supporter_used</td>
+<td></td>
+<td>0 - disable 1 - available</td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>9</td>
+<td>1</td>
+<td>energy_attached</td>
+<td></td>
+<td>0 - disable 1 - available</td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>10</td>
+<td>1</td>
+<td>active_pokemon_exist</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>11</td>
+<td>1</td>
+<td>active_pokemon_hp</td>
+<td></td>
+<td></td>
+<td>[0, 400]</td>
+</tr>
+<tr>
+<td>12</td>
+<td>1</td>
+<td>active_pokemon_damage_taken</td>
+<td></td>
+<td></td>
+<td>[0, 400]</td>
+</tr>
+<tr>
+<td>13</td>
+<td>1</td>
+<td>active_pokemon_card_type</td>
+<td></td>
+<td></td>
+<td>[0, 10]</td>
+</tr>
+<tr>
+<td>14</td>
+<td>1</td>
+<td>active_pokemon_weakness</td>
+<td></td>
+<td></td>
+<td>[0, 10]</td>
+</tr>
+<tr>
+<td>15</td>
+<td>1</td>
+<td>active_pokemon_resistence</td>
+<td></td>
+<td></td>
+<td>[0, 10]</td>
+</tr>
+<tr>
+<td>16</td>
+<td>1</td>
+<td>active_pokemon_prize</td>
+<td></td>
+<td></td>
+<td>[0, 3]</td>
+</tr>
+<tr>
+<td>17</td>
+<td>1</td>
+<td>active_pokemon_has_ability</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>18</td>
+<td>1</td>
+<td>active_pokemon_ability_used</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>19</td>
+<td>1</td>
+<td>active_pokemon_stage</td>
+<td></td>
+<td>0 - basic 1 - stage1 2 - stage2</td>
+<td>[0, 2]</td>
+</tr>
+<tr>
+<td>20</td>
+<td>1</td>
+<td>active_pokemon_evolve_available</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>21</td>
+<td>1</td>
+<td>active_pokemon_has_item</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>22</td>
+<td>1</td>
+<td>active_pokemon_condition</td>
+<td></td>
+<td></td>
+<td>[0, 4]</td>
+</tr>
+<tr>
+<td>23</td>
+<td>1</td>
+<td>active_pokemon_retreat_available</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>24</td>
+<td>1</td>
+<td>active_pokemon_skill1_available</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>25</td>
+<td>1</td>
+<td>active_pokemon_skill2_available</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>26</td>
+<td>1</td>
+<td>active_pokemon_skill3_available</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>27</td>
+<td>1</td>
+<td>active_pokemon_item_skill_available</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>28</td>
+<td>1</td>
+<td>bench_pokemon_exist</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>29</td>
+<td>1</td>
+<td>bench_pokemon_hp</td>
+<td></td>
+<td></td>
+<td>[0, 400]</td>
+</tr>
+<tr>
+<td>30</td>
+<td>1</td>
+<td>bench_pokemon_damage_taken</td>
+<td></td>
+<td></td>
+<td>[0, 400]</td>
+</tr>
+<tr>
+<td>31</td>
+<td>1</td>
+<td>bench_pokemon_card_type</td>
+<td></td>
+<td></td>
+<td>[0, 10]</td>
+</tr>
+<tr>
+<td>32</td>
+<td>1</td>
+<td>bench_pokemon_weakness</td>
+<td></td>
+<td></td>
+<td>[0, 10]</td>
+</tr>
+<tr>
+<td>33</td>
+<td>1</td>
+<td>bench_pokemon_resistence</td>
+<td></td>
+<td></td>
+<td>[0, 10]</td>
+</tr>
+<tr>
+<td>34</td>
+<td>1</td>
+<td>bench_pokemon_prize</td>
+<td></td>
+<td></td>
+<td>[0, 3]</td>
+</tr>
+<tr>
+<td>35</td>
+<td>1</td>
+<td>bench_pokemon_has_ability</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>36</td>
+<td>1</td>
+<td>bench_pokemon_ability_used</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>37</td>
+<td>1</td>
+<td>bench_pokemon_stage</td>
+<td></td>
+<td>0 - basic 1 - stage1 2 - stage2</td>
+<td>[0, 2]</td>
+</tr>
+<tr>
+<td>38</td>
+<td>1</td>
+<td>bench_pokemon_evolve_available</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>39</td>
+<td>1</td>
+<td>bench_pokemon_has_item</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>40</td>
+<td>1</td>
+<td>bench_pokemon_condition</td>
+<td></td>
+<td></td>
+<td>[0, 4]</td>
+</tr>
+<tr>
+<td>41</td>
+<td>1</td>
+<td>bench_pokemon_retreat_available</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>42</td>
+<td>1</td>
+<td>bench_pokemon_skill1_available</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>43</td>
+<td>1</td>
+<td>bench_pokemon_skill2_available</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>44</td>
+<td>1</td>
+<td>bench_pokemon_skill3_available</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>45</td>
+<td>1</td>
+<td>bench_pokemon_item_skill_available</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>46</td>
+<td>85</td>
+<td>...</td>
+<td></td>
+<td>other 5 bench</td>
+<td></td>
+</tr>
+<tr>
+<td>131</td>
+<td>1</td>
+<td>active_pokemon_num</td>
+<td>opponent state feature</td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>132</td>
+<td>1</td>
+<td>bench_pokemon_num</td>
+<td></td>
+<td></td>
+<td>[0, 6]</td>
+</tr>
+<tr>
+<td>133</td>
+<td>1</td>
+<td>left_prize_num</td>
+<td></td>
+<td></td>
+<td>[0, 6]</td>
+</tr>
+<tr>
+<td>134</td>
+<td>1</td>
+<td>hand_num</td>
+<td></td>
+<td></td>
+<td>[0, 60]</td>
+</tr>
+<tr>
+<td>135</td>
+<td>1</td>
+<td>deck_num</td>
+<td></td>
+<td></td>
+<td>[0, 60]</td>
+</tr>
+<tr>
+<td>136</td>
+<td>1</td>
+<td>discard_num</td>
+<td></td>
+<td></td>
+<td>[0, 60]</td>
+</tr>
+<tr>
+<td>137</td>
+<td>1</td>
+<td>lost_zone_num</td>
+<td></td>
+<td></td>
+<td>[0, 60]</td>
+</tr>
+<tr>
+<td>138</td>
+<td>1</td>
+<td>vstar_used</td>
+<td></td>
+<td>0 - used 1 - not used</td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>139</td>
+<td>1</td>
+<td>active_pokemon_exist</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>140</td>
+<td>1</td>
+<td>active_pokemon_hp</td>
+<td></td>
+<td></td>
+<td>[0, 400]</td>
+</tr>
+<tr>
+<td>141</td>
+<td>1</td>
+<td>active_pokemon_damage_taken</td>
+<td></td>
+<td></td>
+<td>[0, 400]</td>
+</tr>
+<tr>
+<td>142</td>
+<td>1</td>
+<td>active_pokemon_card_type</td>
+<td></td>
+<td></td>
+<td>[0, 10]</td>
+</tr>
+<tr>
+<td>143</td>
+<td>1</td>
+<td>active_pokemon_weakness</td>
+<td></td>
+<td></td>
+<td>[0, 10]</td>
+</tr>
+<tr>
+<td>144</td>
+<td>1</td>
+<td>active_pokemon_resistence</td>
+<td></td>
+<td></td>
+<td>[0, 10]</td>
+</tr>
+<tr>
+<td>145</td>
+<td>1</td>
+<td>active_pokemon_prize</td>
+<td></td>
+<td></td>
+<td>[0, 3]</td>
+</tr>
+<tr>
+<td>146</td>
+<td>1</td>
+<td>active_pokemon_has_ability</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>147</td>
+<td>1</td>
+<td>active_pokemon_ability_used</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>148</td>
+<td>1</td>
+<td>active_pokemon_stage</td>
+<td></td>
+<td>0 - basic 1 - stage1 2 - stage2</td>
+<td>[0, 2]</td>
+</tr>
+<tr>
+<td>149</td>
+<td>1</td>
+<td>active_pokemon_evolve_available</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>150</td>
+<td>1</td>
+<td>active_pokemon_has_item</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>151</td>
+<td>1</td>
+<td>active_pokemon_condition</td>
+<td></td>
+<td></td>
+<td>[0, 4]</td>
+</tr>
+<tr>
+<td>152</td>
+<td>1</td>
+<td>active_pokemon_retreat_available</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>153</td>
+<td>1</td>
+<td>active_pokemon_skill1_available</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>154</td>
+<td>1</td>
+<td>active_pokemon_skill2_available</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>155</td>
+<td>1</td>
+<td>active_pokemon_skill3_available</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>156</td>
+<td>1</td>
+<td>active_pokemon_item_skill_available</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>157</td>
+<td>1</td>
+<td>bench_pokemon_exist</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>158</td>
+<td>1</td>
+<td>bench_pokemon_hp</td>
+<td></td>
+<td></td>
+<td>[0, 400]</td>
+</tr>
+<tr>
+<td>159</td>
+<td>1</td>
+<td>bench_pokemon_damage_taken</td>
+<td></td>
+<td></td>
+<td>[0, 400]</td>
+</tr>
+<tr>
+<td>160</td>
+<td>1</td>
+<td>bench_pokemon_card_type</td>
+<td></td>
+<td></td>
+<td>[0, 10]</td>
+</tr>
+<tr>
+<td>161</td>
+<td>1</td>
+<td>bench_pokemon_weakness</td>
+<td></td>
+<td></td>
+<td>[0, 10]</td>
+</tr>
+<tr>
+<td>162</td>
+<td>1</td>
+<td>bench_pokemon_resistence</td>
+<td></td>
+<td></td>
+<td>[0, 10]</td>
+</tr>
+<tr>
+<td>163</td>
+<td>1</td>
+<td>bench_pokemon_prize</td>
+<td></td>
+<td></td>
+<td>[0, 3]</td>
+</tr>
+<tr>
+<td>164</td>
+<td>1</td>
+<td>bench_pokemon_has_ability</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>165</td>
+<td>1</td>
+<td>bench_pokemon_ability_used</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>166</td>
+<td>1</td>
+<td>bench_pokemon_stage</td>
+<td></td>
+<td>0 - basic 1 - stage1 2 - stage2</td>
+<td>[0, 2]</td>
+</tr>
+<tr>
+<td>167</td>
+<td>1</td>
+<td>bench_pokemon_evolve_available</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>168</td>
+<td>1</td>
+<td>bench_pokemon_has_item</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>169</td>
+<td>1</td>
+<td>bench_pokemon_condition</td>
+<td></td>
+<td></td>
+<td>[0, 4]</td>
+</tr>
+<tr>
+<td>170</td>
+<td>1</td>
+<td>bench_pokemon_retreat_available</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>171</td>
+<td>1</td>
+<td>bench_pokemon_skill1_available</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>172</td>
+<td>1</td>
+<td>bench_pokemon_skill2_available</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>173</td>
+<td>1</td>
+<td>bench_pokemon_skill3_available</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>174</td>
+<td>1</td>
+<td>bench_pokemon_item_skill_available</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>175</td>
+<td>85</td>
+<td>...</td>
+<td></td>
+<td>other 5 bench</td>
+<td></td>
+</tr>
+<tr>
+<td>260</td>
+<td>1</td>
+<td>has_energy</td>
+<td>agent private feature</td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>261</td>
+<td>1</td>
+<td>has_supporter</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>262</td>
+<td>1</td>
+<td>has_pokemon_tool</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>263</td>
+<td>1</td>
+<td>has_basic_pokemon</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>264</td>
+<td>1</td>
+<td>has_evolve_pokemon</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>265</td>
+<td>1</td>
+<td>has_stadium</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>266</td>
+<td>1</td>
+<td>has_item</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>267</td>
+<td>1</td>
+<td>has_switch_agent</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>268</td>
+<td>1</td>
+<td>has_switch_opponent</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>269</td>
+<td>1</td>
+<td>has_basic_ball</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>270</td>
+<td>1</td>
+<td>has_special_ball</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>271</td>
+<td>1</td>
+<td>has_shuffle</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>272</td>
+<td>1</td>
+<td>has_find_trainer</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>273</td>
+<td>1</td>
+<td>has_recycle_energy</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>274</td>
+<td>1</td>
+<td>has_recycle_pokemon</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>275</td>
+<td>1</td>
+<td>has_recycle_trainer</td>
+<td></td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>276</td>
+<td>1</td>
+<td>energy_num</td>
+<td></td>
+<td></td>
+<td>[0, 60]</td>
+</tr>
+<tr>
+<td>277</td>
+<td>1</td>
+<td>pokemon_num</td>
+<td></td>
+<td></td>
+<td>[0, 60]</td>
+</tr>
+<tr>
+<td>278</td>
+<td>1</td>
+<td>trainer_num</td>
+<td></td>
+<td></td>
+<td>[0, 60]</td>
+</tr>
+<tr>
+<td>279</td>
+<td>1</td>
+<td>supporter_num</td>
+<td></td>
+<td></td>
+<td>[0, 60]</td>
+</tr>
+<tr>
+<td>280</td>
+<td>1</td>
+<td>has_stadium</td>
+<td>common feature</td>
+<td></td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>281</td>
+<td>1</td>
+<td>from_whom_stadium</td>
+<td></td>
+<td>0 - from opponent 1 - from agent</td>
+<td>[0, 1]</td>
+</tr>
+<tr>
+<td>282</td>
+<td>1</td>
+<td>who_play_first</td>
+<td></td>
+<td>0 - opponent 1 - agent</td>
+<td>[0, 1]</td>
+</tr>
+</tbody>
+</table>
+<h2 id="action-space">Action space<a class="headerlink" href="#action-space" title="Permanent link">&para;</a></h2>
 
 
 
