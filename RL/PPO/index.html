@@ -14,6 +14,8 @@
         <link rel="prev" href="../PG/">
       
       
+        <link rel="next" href="../Q-Learning/">
+      
       
       <link rel="icon" href="../../favicon.ico">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.23">
@@ -382,6 +384,10 @@
       
         
       
+        
+      
+        
+      
     
     
       
@@ -545,6 +551,48 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Q-Learning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Q Learning
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DQN/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DQN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -666,25 +714,44 @@ E_{x\thicksim p} [f(x)] &= \int f(x)p(x)dx \\
 \end{equation}
 </script>
 </p>
+<details class="note">
+<summary>Note</summary>
+<p>Issue of importance sampling
+<script type="math/tex; mode=display">
+\begin{aligned}
+& \operatorname{Var}_{x \sim p}[f(x)]=E_{x \sim p}\left[f(x)^2\right]-\left(E_{x \sim p}[f(x)]\right)^2 \\
+& \begin{aligned}
+\operatorname{Var}_{x \sim q}\left[f(x) \frac{p(x)}{q(x)}\right] & =E_{x \sim q}\left[\left(f(x) \frac{p(x)}{q(x)}\right)^2\right]-\left(E_{x \sim q}\left[f(x) \frac{p(x)}{q(x)}\right]\right)^2 \\
+& =E_{x \sim p}\left[f(x)^2 \frac{p(x)}{q(x)}\right] -\left(E_{x \sim p}[f(x)]\right)^2.
+\end{aligned}
+\end{aligned}
+</script>
+Thus <script type="math/tex">q(x)</script> should not be too far away from <script type="math/tex">p(x)</script>
+</p>
+</details>
 <h3 id="on-policy-off-policy">On-policy -&gt; Off-policy<a class="headerlink" href="#on-policy-off-policy" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Gradiant
+<li>
+<p>Gradiant
 <script type="math/tex; mode=display">
   \begin{equation}
   \begin{split}
-    \nabla\bar{R}_\theta&= E_{\tau \thicksim p_{\theta'}}(\tau)[\frac{p_\theta(\tau)}{p_{\theta'}(\tau)}R(\tau)\nabla\log p_{\theta}(\tau)] \\
+    \nabla\bar{R}_\theta&= E_{\tau \thicksim p_{\theta'}}(\tau)\left[\frac{p_\theta(\tau)}{p_{\theta'}(\tau)}R(\tau)\nabla\log p_{\theta}(\tau)\right] \\
     &= E_{(s_t, a_t) \thicksim \pi_{\theta}}[A^{\theta}(s_t,a_t)\nabla\log p_{\theta}(a_t^n \mid s_t^n)] \\
-    &= E_{(s_t, a_t) \thicksim \pi_{\theta'}}[\frac{P_{\theta}(s_t,a_t)}{P_{\theta'}(s_t,a_t)}A^{\theta'}(s_t,a_t)\nabla\log p_{\theta}(a_t^n \mid s_t^n)] \\
-    &= E_{(s_t, a_t) \thicksim \pi_{\theta'}}[\frac{p_{\theta}(s_t \mid a_t)}{p_{\theta'}(s_t \mid a_t)} \frac{p_{\theta}(s_t)}{p_{\theta'}(s_t)} A^{\theta'}(s_t,a_t)\nabla\log p_{\theta}(a_t^n \mid s_t^n)] \\
-    &= E_{(s_t, a_t) \thicksim \pi_{\theta'}}[\frac{p_{\theta}(s_t \mid a_t)}{p_{\theta'}(s_t \mid a_t)} A^{\theta'}(s_t,a_t)\nabla\log p_{\theta}(a_t^n \mid s_t^n)] \\
+    &= E_{(s_t, a_t) \thicksim \pi_{\theta'}}\left[\frac{P_{\theta}(s_t,a_t)}{P_{\theta'}(s_t,a_t)}A^{\theta'}(s_t,a_t)\nabla\log p_{\theta}(a_t^n \mid s_t^n)\right] \\
+    &= E_{(s_t, a_t) \thicksim \pi_{\theta'}}\left[\frac{p_{\theta}(s_t \mid a_t)}{p_{\theta'}(s_t \mid a_t)} \frac{p_{\theta}(s_t)}{p_{\theta'}(s_t)} A^{\theta'}(s_t,a_t)\nabla\log p_{\theta}(a_t^n \mid s_t^n)\right] \\
+    &= E_{(s_t, a_t) \thicksim \pi_{\theta'}}\left[\frac{p_{\theta}(s_t \mid a_t)}{p_{\theta'}(s_t \mid a_t)} A^{\theta'}(s_t,a_t)\nabla\log p_{\theta}(a_t^n \mid s_t^n)\right] \\
   \end{split}
   \end{equation}
 </script>
+</p>
 </li>
-<li>Target
+<li>
+<p>Target
 <script type="math/tex; mode=display">
   J^{\theta'}(\theta)=E_{(s_t, a_t) \thicksim \pi_{\theta'}}\left[\frac{p_{\theta}(s_t \mid a_t)}{p_{\theta'}(s_t \mid a_t)} A^{\theta'}(s_t,a_t)\right] \\
 </script>
+</p>
 </li>
 </ul>
 <h3 id="ppo_1">PPO<a class="headerlink" href="#ppo_1" title="Permanent link">&para;</a></h3>
@@ -719,7 +786,7 @@ J^{\theta^{\prime}}(\theta)=E_{\left(s_t, a_t\right) \sim \pi_{\theta^{\prime}}}
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年5月20日 22:03:40</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年7月7日 17:58:01</span>
   </span>
 
     
@@ -729,7 +796,7 @@ J^{\theta^{\prime}}(\theta)=E_{\left(s_t, a_t\right) \sim \pi_{\theta^{\prime}}}
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年5月20日 22:03:40</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">2024年7月7日 17:58:01</span>
   </span>
 
     
